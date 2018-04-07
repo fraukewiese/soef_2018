@@ -1,0 +1,309 @@
+
+\documentclass[a4paper,11pt,twoside]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[ngerman]{babel}
+%\usepackage{babelbib}
+%\usepackage[backend=biber]{biblatex}
+\usepackage{units}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage[
+	pdftitle={Energie_Suffizienz},
+ 	pdfauthor={et.al.},
+% 	pdfsubject={},
+% 	pdfkeywords={},
+	pdfstartview=FitH, % Auf Seitenbreite anpassen (Anzeige)
+	pdfborder={0 0 0},
+%  	bookmarks=true,
+% %	plainpages=false,
+	colorlinks=false,
+	hyperfootnotes=false,
+	pagebackref=false]{}
+\usepackage[colorinlistoftodos,prependcaption,textsize=normalsize]{todonotes}  % disable
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage[numbers]{natbib}
+\usepackage{pdfpages}
+\usepackage{hyphenat}
+\usepackage{pdflscape} % für drucken ändern auf package lscape /pdflscape
+\usepackage{textpos}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{pdfcomment}
+
+\usepackage{pgfgantt} % gantchart für den Arbeitsplan
+
+% \usepackage{hyphenat}
+\usepackage{float}
+\usepackage{placeins}
+\RequirePackage[bf]{caption}
+
+\renewcommand{\textfraction}{.01} % vorher: .2
+\renewcommand{\floatpagefraction}{.99}% vorher: .5
+\renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+\renewcommand{\bottomfraction}{0.9}	% max fraction of floats at bottom
+
+\newcommand{\ltab}{\raggedleft\arraybackslash}
+\newcommand{\ctab}{\centering\arraybackslash} 
+\newcommand{\rtab}{\raggedright\arraybackslash}
+
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+\newcommand{\rem}[1]{}
+
+% \renewcommand{\figurename}{Abb.}
+% \renewcommand{\tablename}{Tab.}
+
+\usepackage{acronym}
+%\renewcommand{\bflabel}[1]{\normalfont{\normalsize{#1}}\hfill}
+
+\usepackage[automark]{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ohead{\headmark}
+\ofoot{\pagemark}
+\setheadsepline{0.4pt}
+\setfootsepline{0.4pt}
+
+\setkomafont{pageheadfoot}{\rmfamily\small}
+
+\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}-\arabic{table}}
+
+\newcommand{\entspricht}{\mathrel{\widehat{=}}}
+
+\geometry{left=25mm,right=25mm, top=28mm, bottom=28mm}
+\parindent 0pt
+\parskip 11pt
+
+% kein Platz zwischen \items
+\setlist{nosep}
+% Platz nach Überschriften reduzieren
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+\titlespacing*{\paragraph}{0pt}{0pt}{5pt} % horizontal spacing in paragraph
+
+\begin{document}
+\onehalfspacing
+
+\clearpage
+
+
+{\singlespacing
+\input{titlepage.tex}
+}
+
+\setcounter{page}{1}
+
+
+\section*{Kurzfassung}
+
+
+\section{Zielstellung und gesellschaftlicher Bedarf}
+\textit{Beschreibung der Problem- und Zielstellung sowie des gesellschaftlichen Bedarfs}
+
+Eine der zentralen gesellschaftlichen Herausforderungen ist die Transformation des Energiesystems. Wie kann die Versorgung mit Strom, Wärme, Mobilität sichergestellt werden während Klimaziele erreicht, soziale Gerechtigkeit gewahrt und die natürlichen Grenzen unseres Planeten auch langfristig eingehalten werden?
+
+Energiesystem-Modelle haben sich als Werkzeuge etabliert um technisch mögliche und ökonomisch vorteilhafte Energiewende-Pfade zu analysieren. Sie helfen dabei, komplexe Zusammenhänge zwischen technischen Möglichkeiten (z.B. Flexibilität), Umweltbedingungen (z.B. Wetter-abhängige Erneuerbare), Marktregeln (z.B. Energy-only-Markt) unter dem Licht klimapolitischer Zielsetzungen zu verstehen und unterstützen somit Klima- und Energiepolitik.
+
+Ein entscheidender Einflussparameter für berechnete Szenarien ist die zukünftige Nachfrage nach Strom, Wärme und Mobilität. Die große Überzahl der Modelle legt den Fokus jedoch auf die Bereitstellung der Energiedienstleistungen. Die Nachfrage-Seite wird meist nur innerhalb enger Grenzen variiert. Zwar wird die Verschiebung von z.B. Brennstoff- zu Stromnachfrage durch Elektrifizierung im Wärme- und Transportsektor betrachtet, jedoch kaum die absolute Nachfrage nach Wärme, Strom und Mobilität in Frage gestellt.
+
+Die Herausforderung, Klimaziele zu erreichen und die Grenzen des Planeten langfristig einzuhalten, wird jedoch nur im Zusammenspiel von Konsistenz (Erneuerbare Energien ersetzen Fossile), Effizienz (relative Reduktion des Energieverbrauchs bei Bereitstellung der gleichen Energiedienstleistung) und Suffizienz (absolute Reduktion der Nachfrage nach Energiedienstleistungen ohne Einbuße des menschlichen Wohlbefindens) gelingen. Daher ist es notwendig alle drei auch im Zusammenhang zu betrachten. Die Rolle von Energie-Suffizienz ist derzeit jedoch unterrepräsentiert in Diskussion und Forschung für Klimaschutz und Energiewende.
+
+
+\section{Stand von Wissenschaft und Technik sowie eigene Vorarbeiten}
+\begin{itemize}
+    \item Suffizienz-Forschung, Energiesuffizienz-Forschung
+    \item Gesellschaftlicher Wandel / Transformation \todo{Verbindung mit ESA?}
+    \item Energiesystem-Analyse und Modellierung
+    \item Verbindung von beidem
+    \item Eigene Vorarbeiten: 
+\end{itemize}
+
+% Jonas Masterarbeit als Beispiel für Suffizienz-Klimaschutzplan-Kombi und auf kommunaler Ebene
+% Notwendigkeit von Open Source in ESM
+% ESM-social (Energy and social sciences)
+% WUppertal-Links:
+% Uwe hat sich selber auch mit dem Thema Suffizienz beschäftigt und zuletzt u.a. mit Angelika Zahmt ein Büchlein über Suffizienzpolitik geschrieben: https://www.oekom.de/nc/buecher/gesamtprogramm/buch/damit-gutes-leben-einfacher-wird.html
+ 
+% Außerdem findest du weitere Arbeiten zur Suffizienz (in Bezug auf die Themen Energie, Konsum, Bauen, Gesellschaft, Wachstum) auf dem WI-Publikationsserver. Hier eine kleine Auswahl:
+% https://epub.wupperinst.org/frontdoor/index/index/docId/1512
+% https://epub.wupperinst.org/frontdoor/index/index/docId/5420
+% https://epub.wupperinst.org/frontdoor/index/index/docId/2740
+% https://wupperinst.org/a/wi/a/s/ad/3470/
+
+\section{Bezug zur Sozial-ökologischen Forschung und zu den Förderzielen}
+
+\url{https://www.fona.de/mediathek/pdf/SOEF_Foerderkonzept_barrierefrei.pdf}
+
+Ideen:
+interdisziplinäres Verständnis wird geschaffen und baut auf dem disziplinären Vorwissen auf indem teilweise gleiche Arbeitspaket erst disziplinär parallel ausgeführt werden um dann in der Synthesephase den gemeinsamen Blick drauf zu werden (z.B. Szenarien-Methoden)
+
+% aus altem Antrag
+Die Weiterentwicklung institutioneller Kapazitäten zur Durchführung transdisziplinärer Nachhaltigkeitsforschung wird durch die Verankerung der Nachwuchsgruppe am Interdisziplinären Institut für Umwelt-, Sozial und Humanwissenschaften an der Europa-Universität Flensburg geschaffen. In der eigenverantwortlichen Arbeitsgruppe bekommen junge Wissenschaftler*innen die Möglichkeit sich auf der Basis ihres disziplinären Vorwissens sozial-ökkologischen Fragestellungen zu  widmen. Möglichkeiten zur Weiterqualifizierung werden durch die  Nachwuchsgruppe für wissenschaftliche Mitarbeiter*innen geschaffen, die zwar schon jetzt an den Schnittstellen forschen, dafür aber nicht den entsprechenden Rahmen haben um sich auch wissenschaftlich zu qualifizieren.
+
+\section{Forschungsarbeit, Arbeitsprogramm, Methoden, Disziplinen}
+\textit{Beschreibung der geplanten Forschungsarbeiten und des Arbeitsprogramms, unter Einschluss der Darstellung von Methoden, die zur Anwendung kommen bzw. entwickelt werden sollen; sowie der disziplinären Zusammensetzung der geplanten Nachwuchsgruppe}
+
+%%%%%%%%%%%
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Forschungsarbeit.pdf}
+    \caption{Forschungsprogramm: Disziplinäre Forschungsarbeit (vertikal) und  interdisziplinäre (horizontal) Arbeitspakete im Verlauf der fünf Jahre sowie geplanter disziplinärer und interdisziplinärer Output}
+    \label{fig:forschungsprogramm}
+\end{figure}
+
+Abbildung \ref{fig:forschungsprogramm} gibt einen Überblick wie die disziplinären Forschungsarbeiten (FA) im Verlauf der fünf Jahre über die interdisziplinären Arbeitspakete (AP) ineinander greifen. Die FA sowie AP werden im Folgenden näher erläutert.
+
+WO SIND DIE MEILENSTEINE? PRO FA?
+
+\subsection*{FA: Gesellschaftlicher Wandel und Energieverbrauch}
+D-AP-T1: Zusammenhang gesellschaftlicher Wandel und Energieverbrauch - Vergangenheit und Gegenwart
+D-AP2-T2: Zusammenhang gesellschaftlicher Wandel und Energieverbrauch - Zukunft
+D-AP-T3: Szenarien-Methode
+...
+D-AP-T Output: Zukunftserzählungen von gesellschaftlichen Suffizienz-Pfaden
+
+\subsection*{FA: Regulatorische Rahmenbedingungen für Suffizienz, Effizienz und Konsistenz}
+D-AP-Ö1: Ökonomische und regulatorische Rahmenbedingungen für Konsistenz, Effizienz und Suffizienz - Vergangenheit und Gegenwart
+D-AP-Ö2: Ökonomische und regulatorische Rahmenbedingungen für Konsistenz, Effizienz und Suffizienz - Zukunft
+D-AP-Ö3: Szenarien-Methode
+D-AP-Ö4: Quantifizierung der Auswirkungen (Emissionsreduktion, Kosten) verschiedener regulatorischer Maßnahmen zu Konsistenz, Effizienz und Suffizienz
+D-AP-Ö5: 
+D-AP-Ö Output: Zusammenfassung Konsistenz, Effizienz und Suffizienz Maßnahmen auf individueller, kommunaler, nationaler und EU-Ebene
+
+\subsection*{FA: Integrierte Energie-System-Analyse: Der Beitrag von Konsistenz, Effizienz und Suffizienz zur Energiewende}
+D-AP-ESM1: Auswahl eines offenen Energiesystem-Modells (erweiterbar, anpassbar, open source, gewisser Nutzerkreis)
+D-AP-ESM2: Erweiterung ESM um die ermittelten Nachfrage-Parameter
+D-AP-ESM3: Szenarien-Methode
+D-AP-ESM4: Modellierung: Quantifizierung des Beitrags von Konsistenz, Effizienz und Suffizienz zu einem Energiesystem mit geringem Anteil fossiler Brennstoffen
+D-AP-ESM5: Ergebnis-Kommunikation
+D-AP-ESM Output: Integriertes ESM für Konsistenz, Effizienz, Suffizienz wird unter einer offenen Lizenz Wissenschaft und Gesellschaft zur Verfügung gestellt
+
+
+\subsection*{AP: Interdisziplinärer Forschungsrahmen}
+Am Beginn der Forschungsgruppe steht der gemeinsame Entwurf eines interdisziplinären Bezugsrahmens für Forschung zu Energie-Suffizienz aus Sicht der Energiesystemanalyse, des Transformationsdesigns und aus ökonomischer/regulatorischer Sicht. Neben dem inhaltlichen "aufeinander einlassen" werden auch die Formen und Formate für die gemeinsame Zusammenarbeit entworfen, wie z.B. ein zwei-wöchentlicher Jour Fixe für den Austausch etc.
+
+\subsection*{AP: Gesellschaftliche Indikatoren für Energieverbrauch}
+Um Suffizienz im Energiesystem-Model abbilden zu können bedarf es einer Übersetzung von gesellschaftlichen Indikatoren zu quantifizierbarem Energieverbrauch. Dieser sozioligisch-technisch-ökonomischen Schnittstelle widmet sich dieses AP. In FA ... wurden relevante gesellschaftliche Einflussfaktoren auf die Energienachfrage ermittelt. Diese bilden die Grundlage für die Auswahl der Indikatoren, die in das Energiesystem-Modell als Input-Parameter aufgenommen werden. Ein Beispiel zur Verdeutlichung: Das gestiegene Durchschnittsalter der Bevölkerung führt zu gesteigerter Wohnfläche, was sich wiederum in Wärmebedarf ausdrücken lässt. Oder: Eine Reduktion der durchschnittlichen Arbeitszeit führt zu einem erhöhten Mobilitätsaufkommen. In FA .. wurden relevante regulatorische Einfussfaktoren auf Suffizienz, Konsistenz und Effizienz ermittelt. Das kann zum Beispiel die EnEV sein, die als Effizienz-Maßnahme zu verstehen ist, da sie nicht auf den Wärmebedarf pro Person sondern auf den Wärmebedarf pro Wohnfläche abzielt. Das Modell muss dann vorbereitet werden, so dass solche Maßnahmen auch abgebildet werden können.
+
+\subsection*{AP: Szenarien-Methode}
+Diesem methodische Arbeitspaket wird aus disziplinärer Sicht vorbereitet: Verschiedene Methoden zur Szenarienerstellung werden auf ihre Eignung für die Szenarien geprüft. Dies erfolgt in allen Forschungsarbeiten. Die Ergebnisse werden gegenseitig vorgestellt. Daraufhin wird entweder eine passende Methode zur Szenarien-Erstellung ausgewählt oder bestehende disziplinäre kombiniert. Genauer zu untersuchende Methoden sind u.a. Cross-Impact-Balance .....
+
+\subsection*{AP:Szenarien-Erstellung}
+Im Anschluss an die Auswahl der Methode werden konsistente Szenarien in dieser inter- und transdisziplinären Arbeitsphase konsistente Gesellschafts-Energiesystem-Szenarien erstellt. Der Szenario-Fokus ist zweigeteilt: Einmal liegt der Fokus auf Flensburg, einmal auf Deutschland. Im Rahmen von Workshops und Befragungen werden Praxipartner in die Szenarienerstellung einbezogen. 
+
+\subsection*{AP:Iteration Szenarien}
+Die Ausgestaltung und Übersetzung der Szenarien in quantifizierte Daten als Modell-Input macht mindestens eine Iterationsschleife und eine Anpassung oder Ergänzung der Szenarien erforderlich.
+
+\subsection*{AP:Synthese und Ausblick}
+Gemeinsame Publikationen, Veröffentlichung Ergebnisse, begleitet von Überlegungen wie es weitergeht
+
+
+die dann in die notwendige Erweiterung des gewählten ESM münden.
+
+
+
+Methodisch...
+
+Am Ende steht die Synthese-Phase
+
+...gemeinsamen Methodenentwicklung vor dem Hintergrund transdisziplinärer Nachhaltigkeitsforschung....
+
+% Arbeitsstränge jeweils mit einem Absatz beschreiben. Wie beschreibt man die interdis. - evtl. lieber doch die Phasen?
+Arbeitsstrang "Gesellschaftlicher Wandel und Energienachfrage"
+
+Arbeitsstrang "Politische und regulatorische Rahmenbedingungen für Konsistenz, Effizienz und Suffizienz in Energiesystemen"
+
+Arbeitsstrang "Energiesystem-Modellierung: Integrierte Betrachtung möglicher Beiträge von Konsistenz, Effizienz und Suffizienz zu Klimaschutz und Energiewende"
+%%%%%%%%%%%%%%%%
+
+% Aus dem ersten Entwurf
+Im Projekt wird der Einfluss von gesellschaftlichen Veränderungen auf die Nachfrage an Energie-Dienstleistungen untersucht. Dabei werden historische Trends analysiert und Zukünfte skizziert. Es werden Parameter identifiziert, die gesellschaftlichen Wandel in Energie-Nachfrage übersetzen können. Diese Nachfrage ist wiederum der Input für ein Energiesystem-Modell, mit dem dann der Einfluss von gesellschaftlicher Transformation auf die Ausgestaltung des Energiesystems analysiert werden kann.
+Entwickelt wird ein Rahmen für die integrierte Betrachtung von Transformation der Gesellschaft und des Energiesystems. Dabei ist die Nachfrage nach Energie-Systemdienstleistungen der verbindende Parameter. Im Anschluss an die Analyse der Rolle von Energiesuffizienz zur Erreichung von Klimazielen, werden Energiewende- und Klimaschutz-Maßnahmen und Gesetzgebung auf ihre Wirksamkeit in Bezug auf Energie-Suffizienz untersucht.
+
+Da die skizzierte Forschung auf Erkenntnissen aus Energiesystem-Analyse, Zukunftsforschung und Transformationsdesign aufbaut, wird sich das Team der Nachwuchsforschungsgruppe auch entsprechend interdisziplinär zusammensetzen.
+
+Ergebnisse des trans- und interdisziplinären Forschungsprojektes sollen sowohl Literatur und Methoden der Energiesystem-Analyse als auch die des Transformations-Designs erweitern. Schwerpunkt liegt dabei auf Synergien zwischen den Forschungsgebieten. Daten und Software die im Rahmen des Projektes erarbeitet werden, werden open source zur Verfügung gestellt, was die Verwendbarkeit der Forschungsarbeit für andere ermöglicht. Der Open Science Ansatz der der Nachwuchs-Forschunggruppe zugrunde liegen wird, beinhaltet auch den offenen Zugang zu Publikationen etc. Die Erkenntnisse sollen außerdem politische Entscheidungsprozesse zu Klimaschutz und Energiewende unterstützen und Empfehlungen für Suffizienzpolitik beinhalten. Ein Schwerpunkt wird die Ergebnis-Kommunikation auch im populär-wissenschaftlichen Bereich.
+
+
+\section{vorgesehene Kooperationen (Forschungs- und Praxispartner) und Arbeitsteilung, Einbindung der Praxispartner in den transdisziplinären Forschungsansatz}
+
+\section{Betreuungskonzept (inklusive der/des vorgesehenen Mentorin bzw. Mentors und Nachweis deren/dessen Expertise in Bezug auf inter- und transdisziplinäre Forschung}
+
+\section{Darstellung und Motivation der beteiligten Institutionen sowie Zukunftsperspektiven für die jeweiligen Mitglieder der Nachwuchsgruppe}
+(nicht grundfinanzierte außeruniversitäre Forschungsinstitute haben zusätzlich darzustellen, ­inwieweit den betreffenden Mitgliedern zeitlich befristete Freiräume eingerichtet werden können, sich zeitweise voll auf ihre Qualifikation zu konzentrieren), erwartetes Ergebnis, Anwendungspotenzial und angestrebte Ergebnisverwertung. Der Verwertungsplan muss konkrete Maßnahmen der Öffentlichkeitsarbeit und des Wissenstransfers (auch von Zwischenergebnissen) beinhalten;
+
+\section{Zeitplanung und Kostenschätzung}
+\textit{Gesamtkosten bzw. -ausgaben, Grobkalkulation von Personal-, Sach- und Reisemitteln, gegebenenfalls Berücksichtigung von Eigenbeteiligung sowie Drittmitteln).}
+
+\textit{Basierend auf den geltenden tarifrechtlichen Regelungen und projektbezogen, können in der Regel maximal vier wissenschaftliche Personalstellen (teilbar) je Nachwuchsgruppe beantragt werden (davon maximal zwei Post-Doktorandinnen oder Post-Doktoranden). Bereits durch öffentliche Mittel grundfinanzierte Stellen können grundsätzlich nicht gefördert werden.
+In begrenztem Umfang können auch Assistenz- und Hilfskräfte sowie Sachmittel und Mittel zur Einbindung von Praxispartnern beantragt werden.}
+\begin{itemize}
+    \item eine Leiterstelle (Postdoc) - möglicherweise teilen
+    \item je einen Doktoranden je Strang, zu 75 prozent oder 2?
+    \item auch Auslandsaufenthalte einplanen
+    \item summer schools
+    \item Fortbildungsmassnahmen Gruppenleiterd{evtlitemize}
+\end{itemize}
+
+Die Zeitplanung findet sich in Abbildung \ref{fig:forschungsprogramm}. (TODO: gantt-chart?). Die Kostenschätzung pro Jahr ist der Tabelle \ref{tab:kostenkalkulation} zu entnehmen. Für die EUF sind drei Stellen inklusive der Leitungsstelle, für das ... ist eine Stelle kalkuliert. Die Zahlen für Personalmittel beinhalten einen Overhead von 20\%.
+
+\begin{table}[h]
+\begin{center}
+  \caption{Kostenschätzung EUF}
+\begin{tabular}[h]{lrrrr}
+&& EUF & ? & Gesamt\\
+\hline
+\hline
+&&&&\\
+ Personalmittel & 1.300.000 & & &\\
+ \hline
+ &&&&\\
+ Coaching und Fortbildung & 25.000& & &\\
+ \hline
+ &&&&\\
+ Sachkosten & 15.000& & &\\
+ \hline
+ &&&&\\
+ Reisemittel & 50.000 & & &\\
+ \hline
+ &&&&\\
+ Veröffentlichungen & 20.000 &&&\\
+ (Open Access) && & &\\
+ \hline
+ &&&&\\
+Veranstaltungen/Praxispartner & 35.000& &&\\
+ \hline
+ \hline
+ &&&&\\
+ \textbf{Summe in Euro}&& \textbf{}&\textbf{}&\underline{\textbf{}}\\
+ \label{tab:kostenkalkulation}
+\end{tabular}
+\end{center}
+\end{table}
+
+\clearpage
+
+\appendix
+\section{Anhang?}
+
+Literaturlisten, Lebensläufe und gegebenenfalls Interessensbekundungen von Praxispartnern sind im Anhang beizufügen.
+
+\clearpage
+\section{Literatur} \label{sec:lit}
+\bibliographystyle{plainnat}%elsarticle-num} 
+\bibliography{literature.bib}
+
+\end{document}
